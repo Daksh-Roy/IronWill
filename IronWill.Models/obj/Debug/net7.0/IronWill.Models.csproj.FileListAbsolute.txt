@@ -1,0 +1,11 @@
+/Users/dakshroy/Projects/IronWill/IronWill.Models/bin/Debug/net7.0/IronWill.Models.deps.json
+/Users/dakshroy/Projects/IronWill/IronWill.Models/bin/Debug/net7.0/IronWill.Models.dll
+/Users/dakshroy/Projects/IronWill/IronWill.Models/bin/Debug/net7.0/IronWill.Models.pdb
+/Users/dakshroy/Projects/IronWill/IronWill.Models/obj/Debug/net7.0/IronWill.Models.GeneratedMSBuildEditorConfig.editorconfig
+/Users/dakshroy/Projects/IronWill/IronWill.Models/obj/Debug/net7.0/IronWill.Models.AssemblyInfoInputs.cache
+/Users/dakshroy/Projects/IronWill/IronWill.Models/obj/Debug/net7.0/IronWill.Models.AssemblyInfo.cs
+/Users/dakshroy/Projects/IronWill/IronWill.Models/obj/Debug/net7.0/IronWill.Models.csproj.CoreCompileInputs.cache
+/Users/dakshroy/Projects/IronWill/IronWill.Models/obj/Debug/net7.0/IronWill.Models.dll
+/Users/dakshroy/Projects/IronWill/IronWill.Models/obj/Debug/net7.0/refint/IronWill.Models.dll
+/Users/dakshroy/Projects/IronWill/IronWill.Models/obj/Debug/net7.0/IronWill.Models.pdb
+/Users/dakshroy/Projects/IronWill/IronWill.Models/obj/Debug/net7.0/ref/IronWill.Models.dll

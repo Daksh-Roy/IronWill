@@ -5,6 +5,10 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IronWill.WebApi", "IronWill.WebApi\IronWill.WebApi.csproj", "{1317BFAA-91A2-4576-ACB3-578427ADD2EC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IronWill.Models", "IronWill.Models\IronWill.Models.csproj", "{8164A7BD-A59E-4DEE-A18F-22B2092BABBC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IronWill.Blazor", "IronWill.Blazor\IronWill.Blazor.csproj", "{FCFBBDF5-5DBB-49A4-9DAF-F6E54AB16662}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,13 @@ Global
 		{1317BFAA-91A2-4576-ACB3-578427ADD2EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1317BFAA-91A2-4576-ACB3-578427ADD2EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1317BFAA-91A2-4576-ACB3-578427ADD2EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8164A7BD-A59E-4DEE-A18F-22B2092BABBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8164A7BD-A59E-4DEE-A18F-22B2092BABBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8164A7BD-A59E-4DEE-A18F-22B2092BABBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8164A7BD-A59E-4DEE-A18F-22B2092BABBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCFBBDF5-5DBB-49A4-9DAF-F6E54AB16662}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCFBBDF5-5DBB-49A4-9DAF-F6E54AB16662}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCFBBDF5-5DBB-49A4-9DAF-F6E54AB16662}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCFBBDF5-5DBB-49A4-9DAF-F6E54AB16662}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
