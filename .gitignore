@@ -13,6 +13,8 @@ appsettings.Development.json
 # Ignore build directories
 bin/
 obj/
+/IronWill.Models/bin
+/IronWill.Models/obj
 
 # Ignore JetBrains Rider settings
 .idea/
