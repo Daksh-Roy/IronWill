@@ -2,6 +2,7 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using IronWill.Models.Entities;
 using IronWill.Models.Models;
 using IronWill.WebApi.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
@@ -12,12 +13,12 @@ namespace IronWill.WebApi.Services.Classes
 {
 	public class UserService : IUserService
 	{
-		private UserManager<IdentityUser> _userManager;
+		private UserManager<ApplicationUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly IConfiguration _configuration;
         private readonly IEmailService _emailService;
 
-        public UserService(UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration, IEmailService emailService)
+        public UserService(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration, IEmailService emailService)
 		{
 			_userManager = userManager;
 			_roleManager = roleManager;
@@ -54,19 +55,21 @@ namespace IronWill.WebApi.Services.Classes
                 };
             }
 
-            var identityUser = new IdentityUser
+            var applicationUser = new ApplicationUser
 			{
 				Email = registerModel.Email,
 				UserName = registerModel.Email,
-				PhoneNumber = registerModel.MobileNumber
-			};
+				PhoneNumber = registerModel.MobileNumber,
+                JoinDate = registerModel.JoinDate,
+                Status = registerModel.Status
+            };
 
-			var result = await _userManager.CreateAsync(identityUser, registerModel.Password);
+			var result = await _userManager.CreateAsync(applicationUser, registerModel.Password);
 
 			if (result.Succeeded)
 			{
                 // Assign the role to the user
-                await _userManager.AddToRoleAsync(identityUser, registerModel.Role.ToString());
+                await _userManager.AddToRoleAsync(applicationUser, registerModel.Role.ToString());
 
                 return new UserManagerResponse
                 {

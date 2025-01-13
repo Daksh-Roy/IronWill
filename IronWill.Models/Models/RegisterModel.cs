@@ -38,6 +38,10 @@ namespace IronWill.Models.Models
         public DateTime? DateOfBirth { get; set; }
 
         public Gender Gender { get; set; }
+
+        public DateTime JoinDate { get; set; } = DateTime.UtcNow;
+
+        public UserStatus Status { get; set; } = UserStatus.Active;
     }
 }
 

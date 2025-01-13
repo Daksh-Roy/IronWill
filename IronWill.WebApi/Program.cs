@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using IronWill.Models.Entities;
 using IronWill.WebApi.Services.Classes;
 using IronWill.WebApi.Services.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -18,7 +19,7 @@ public class Program
         builder.Services.AddDbContext<ApplicationDbContext>(options =>
             options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-        builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
+        builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
         {
             options.Password.RequireDigit = true;
             options.Password.RequireUppercase = true;
