@@ -45,7 +45,7 @@ public class Program
                 ValidAudience = builder.Configuration["Jwt:Audience"],
                 RequireExpirationTime = true,
                 IssuerSigningKey = new SymmetricSecurityKey(
-                    Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"])),
+                    Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"] ?? "")),
             };
         });
 
@@ -86,7 +86,7 @@ public class Program
 
     static async Task SeedRolesAsync(RoleManager<IdentityRole> roleManager)
     {
-        var roles = new[] { "Admin", "GymOwner", "Trainer", "Member" };
+        var roles = new[] { "Admin", "GymOwner", "Trainer", "Member", "Staff" };
         foreach (var role in roles)
         {
             if (!await roleManager.RoleExistsAsync(role))

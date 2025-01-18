@@ -37,7 +37,7 @@ namespace IronWill.WebApi.Services.Classes
             using var smtp = new SmtpClient();
             try
             {
-                await smtp.ConnectAsync(emailSettings["SmtpServer"], int.Parse(emailSettings["Port"]), MailKit.Security.SecureSocketOptions.StartTls);
+                await smtp.ConnectAsync(emailSettings["SmtpServer"], int.Parse(emailSettings["Port"] ?? ""), MailKit.Security.SecureSocketOptions.StartTls);
                 await smtp.AuthenticateAsync(emailSettings["SenderEmail"], emailSettings["Password"]);
                 await smtp.SendAsync(email);
             }
