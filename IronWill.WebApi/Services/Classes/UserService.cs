@@ -60,11 +60,22 @@ namespace IronWill.WebApi.Services.Classes
 				Email = registerModel.Email,
 				UserName = registerModel.Email,
 				PhoneNumber = registerModel.MobileNumber,
+                FullName = registerModel.FullName,
+                DateOfBirth = registerModel.DateOfBirth,
+                Gender = registerModel.Gender,
+                Address = registerModel.Address,
                 JoinDate = registerModel.JoinDate,
                 Status = registerModel.Status
             };
 
-			var result = await _userManager.CreateAsync(applicationUser, registerModel.Password);
+            if (registerModel.Password is null)
+                return new UserManagerResponse
+                {
+                    Message = "Please enter Password",
+                    isSuccess = false
+                };
+
+            var result = await _userManager.CreateAsync(applicationUser, registerModel.Password);
 
 			if (result.Succeeded)
 			{
@@ -119,7 +130,7 @@ namespace IronWill.WebApi.Services.Classes
 
             // Generate JWT token
             var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]);
+            var key = Encoding.UTF8.GetBytes(_configuration["Jwt:Key"] ?? "");
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new[]
@@ -128,7 +139,7 @@ namespace IronWill.WebApi.Services.Classes
             new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
             new Claim(ClaimTypes.Email, user.Email)
         }),
-                Expires = DateTime.UtcNow.AddMinutes(double.Parse(_configuration["Jwt:TokenLifetimeMinutes"])),
+                Expires = DateTime.UtcNow.AddMinutes(double.Parse(_configuration["Jwt:TokenLifetimeMinutes"] ?? "")),
                 Issuer = _configuration["Jwt:Issuer"],
                 Audience = _configuration["Jwt:Audience"],
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256)

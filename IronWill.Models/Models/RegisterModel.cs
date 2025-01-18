@@ -9,28 +9,24 @@ namespace IronWill.Models.Models
         [Required]
         [StringLength(50)]
         [EmailAddress]
-        public string Email { get; set; }
+        public string Email { get; set; } = string.Empty;
 
         [Required]
         [StringLength(maximumLength: 20, MinimumLength = 8)]
-        public string Password { get; set; }
+        public string Password { get; set; } = string.Empty;
 
         [Required]
         [StringLength(maximumLength: 20, MinimumLength = 8)]
-        public string ConfirmPassword { get; set; }
+        public string ConfirmPassword { get; set; } = string.Empty;
 
         [Required]
         [StringLength(50)]
-        public string FirstName { get; set; }
-
-        [Required]
-        [StringLength(50)]
-        public string LastName { get; set; }
+        public string FullName { get; set; } = string.Empty;
 
         [Required]
         [StringLength(15)]
         [Phone]
-        public string MobileNumber { get; set; }
+        public string MobileNumber { get; set; } = string.Empty;
 
         [Required]
         public UserRole Role { get; set; }
@@ -38,6 +34,8 @@ namespace IronWill.Models.Models
         public DateTime? DateOfBirth { get; set; }
 
         public Gender Gender { get; set; }
+
+        public string Address { get; set; } = string.Empty;
 
         public DateTime JoinDate { get; set; } = DateTime.UtcNow;
 
